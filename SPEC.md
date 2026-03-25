@@ -52,6 +52,9 @@
 - `POST /api/datasets/{id}/images` - 添加图片到数据集
 - `DELETE /api/images/{id}` - 删除图片
 
+### AI 智能分类
+- `POST /api/ai/classify-image` - 调用大模型自动判断图片类别并添加到对应数据集
+
 ## 5. 项目结构
 
 ```
@@ -66,7 +69,8 @@ image-dataset-manager/
 │   ├── database.py      # SQLAlchemy 数据库配置
 │   └── routers/
 │       ├── __init__.py
-│       └── datasets.py  # 数据集路由
+│       ├── datasets.py  # 数据集路由
+│       └── ai.py        # AI 智能分类路由
 ├── data/                # 数据存储目录
 ├── config.yaml          # 配置文件
 ├── pyproject.toml
@@ -84,3 +88,6 @@ image-dataset-manager/
 - `data.path`: 图片存储目录路径
 - `app.host`: 服务主机
 - `app.port`: 服务端口
+- `ai.base_url`: AI API 地址
+- `ai.api_key`: AI API 密钥
+- `ai.model`: AI 模型名称
