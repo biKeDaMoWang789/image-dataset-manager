@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from app.config import settings
 from app.database import init_db
 from app.routers.datasets import router as datasets_router
+from app.routers.ai import router as ai_router
 
 app = FastAPI(
     title="图片数据集管理系统",
@@ -14,6 +15,7 @@ app = FastAPI(
 )
 
 app.include_router(datasets_router)
+app.include_router(ai_router)
 
 data_path = Path(settings.data.path)
 data_path.mkdir(parents=True, exist_ok=True)
