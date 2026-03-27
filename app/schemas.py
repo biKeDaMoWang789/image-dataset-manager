@@ -8,10 +8,6 @@ class ImageBase(BaseModel):
     path: str
 
 
-class ImageCreate(BaseModel):
-    source_path: str
-
-
 class ImageResponse(ImageBase):
     id: int
     dataset_id: int
