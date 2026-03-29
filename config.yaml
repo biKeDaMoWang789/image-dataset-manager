@@ -8,8 +8,3 @@ app:
   host: "0.0.0.0"
   port: 8000
   debug: true
-
-ai:
-  base_url: "https://api.minimaxi.com/anthropic"
-  api_key: "sk-cp-rKVuvYxRKfPx1quIluaoC4b-bx929UepTzqj7_z9fhL2PcjNIc3UlYpQeAG8o0b5s7a21ElaeFp7Ny5AtCShzwe6gjfAojY5lZVuDUaJnX_jkCkrF2Wexjs"
-  model: "MiniMax-M2.7"

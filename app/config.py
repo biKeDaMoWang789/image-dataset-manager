@@ -20,17 +20,10 @@ class AppConfig(BaseSettings):
     debug: bool = False
 
 
-class AIConfig(BaseSettings):
-    base_url: str = "https://api.minimaxi.com/anthropic/v1"
-    api_key: str = "your_api_key_here"
-    model: str = "MiniMax-M2.7"
-
-
 class Settings(BaseSettings):
     database: DatabaseConfig = Field(default_factory=DatabaseConfig)
     data: DataConfig = Field(default_factory=DataConfig)
     app: AppConfig = Field(default_factory=AppConfig)
-    ai: AIConfig = Field(default_factory=AIConfig)
 
     @classmethod
     def from_yaml(cls, config_path: str = "config.yaml") -> "Settings":
