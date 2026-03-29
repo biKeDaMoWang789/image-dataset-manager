@@ -12,7 +12,6 @@ from app.schemas import (
     DatasetCreate,
     DatasetResponse,
     DatasetUpdate,
-    DatasetWithImages,
     ImageResponse,
 )
 
@@ -27,14 +26,14 @@ def load_image_data(path: str) -> str | None:
     return None
 
 
-def image_to_response(image: Image) -> ImageResponse:
+def image_to_response(image: Image, include_data: bool = False) -> ImageResponse:
     return ImageResponse(
         id=image.id,
         dataset_id=image.dataset_id,
         filename=image.filename,
         path=image.path,
         created_at=image.created_at,
-        image_data=load_image_data(image.path),
+        image_data=load_image_data(image.path) if include_data else None,
     )
 
 

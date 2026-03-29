@@ -20,10 +20,15 @@ class AppConfig(BaseSettings):
     debug: bool = False
 
 
+class AIConfig(BaseSettings):
+    model: str = "qwen3-vl-flash"
+
+
 class Settings(BaseSettings):
     database: DatabaseConfig = Field(default_factory=DatabaseConfig)
     data: DataConfig = Field(default_factory=DataConfig)
     app: AppConfig = Field(default_factory=AppConfig)
+    ai: AIConfig = Field(default_factory=AIConfig)
 
     @classmethod
     def from_yaml(cls, config_path: str = "config.yaml") -> "Settings":
